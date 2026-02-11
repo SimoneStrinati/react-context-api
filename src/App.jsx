@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
+import { BudgetProvider } from './context/BudgetContext';
 
 import HomePage from "./pages/Homepage";
 import ChiSiamo from './pages/ChiSiamo';
@@ -10,17 +10,18 @@ import ProductDetailPage from './pages/ProductDetailPage';
 function App() {
 
   return (
-    <>
+    <><BudgetProvider>
       <BrowserRouter>
         <Routes>
           <Route Component={DefaultLayout}>
             <Route path='/' Component={HomePage} />
             <Route path='/prodotti' Component={Prodotti} />
             <Route path='/chisiamo' Component={ChiSiamo} />
-            <Route path="/prodotti/:id" Component={ProductDetailPage} /> 
+            <Route path="/prodotti/:id" Component={ProductDetailPage} />
           </Route>
         </Routes>
       </BrowserRouter>
+    </BudgetProvider>
     </>
   )
 }
