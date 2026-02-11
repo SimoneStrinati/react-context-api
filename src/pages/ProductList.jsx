@@ -36,8 +36,8 @@ function Prodotti() {
 
                     <h2> {prodotto.title}</h2>
                     <img className="image" src={prodotto.image} alt="" />
-                    <p>Prezzo: € {prodotto.price}</p>
-                    <p>{prodotto.category} </p>
+                    <p>Prezzo: € {prodotto.price.toFixed(2)}</p>
+                    <p>{prodotto.category.toUpperCase()} </p>
                     <Link to={`/prodotti/${prodotto.id}`} className='link'> Vai al dettaglio prodotto </Link>
 
                 </div>
